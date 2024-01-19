@@ -1,0 +1,117 @@
+{% extends "inicio.html" %}
+{% load static %}
+<link rel="stylesheet" href="../static/css/index.css">
+{% block content %}
+
+    <header class="header">
+        <h1>BIENVENIDO A SUMICENTER.DB</h1>
+    </header>
+    
+    <div class="barra_busqueda">
+        <form action="" method="get">
+            <div class="input-search">
+                <input type="text" placeholder="Buscar Elemento" name="busqueda" value="{{request.GET.busqueda}}">
+                <div>
+                    <button type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
+
+    <div class="button"> 
+        <button id="open">
+            Registrar producto
+        </button>
+    </div>
+
+    
+    <div class="centrar">
+        <div class="modal-container centrar" id="modal_container">
+            <div class="modal">
+                <h2>Registro de productos</h1>
+                <form action="{% url 'registroSumicenter'%}" method="post">
+                    {% csrf_token %}
+                    <div class="item">
+                        <input id="" type="text" name="modelo" placeholder="Modelo" required>
+                    </div>
+                    <div class="item">
+                        <input type="text" name="serial" placeholder="Serial">
+                    </div>
+                    <div class="item">
+                        <input type="text" name="codigo" placeholder="Codigo stihl">
+                    </div>
+                    <div class="item">
+                        <input type="date" name="fecha-ingreso" placeholder="fecha ingreso" required>
+                    </div>
+                    <div class="item">
+                        <input type="text" name="EAN" placeholder="EAN">
+                    </div>
+                    <div class="item">
+                        <input type="text" name="orden" placeholder="Orden">
+                    </div>
+                    <div class="item">
+                        <input type="text" name="factura" placeholder="Factura">
+                    </div>
+                    <div class="item">
+                        <input type="text" name="cantidad" placeholder="Cantidad" required>
+                    </div>
+                    <div>
+                        <button type="submit">REGISTRAR</button>
+                    </div>
+                </form>
+
+                
+    
+                <button id="close">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="main-container" id="main-container">
+        <table id="table" class="table">
+            <h2>Inventario Sumicenter</h2>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Modelo</th>
+                    <th>Serial</th>
+                    <th>Codigo Stihl</th>
+                    <th>Fecha ingreso</th>
+                    <th>EAN</th>
+                    <th>Orden</th>
+                    <th>Factura</th>
+                    <th>cantidad</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            {% for item in producto %}
+            <tbody>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.modelo}}</td>
+                    <td>{{item.serial}}</td>
+                    <td>{{item.codigo}}</td>
+                    <td>{{item.fecha|date:"Y-m-d"}}</td>
+                    <td>{{item.EAN}}</td>
+                    <td>{{item.orden}}</td>
+                    <td>{{item.factura}}</td>
+                    <td>{{item.cantidad}}</td>
+                    <td>
+                        <a href="{% url 'editarProducto' id=item.id%}" class='btn-pencil'><i class='fa-solid fa-pencil'></i></a>
+                        <a href="{% url 'eliminarProducto' id=item.id%}" class='btn-trash'><i class='fa-solid fa-trash-can'></i></a>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
+    
+    
+{% endblock content %}

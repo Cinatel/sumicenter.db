@@ -1,0 +1,74 @@
+
+{% load static %}
+
+<div id="sidemenu" class="menu-colapsed">
+    <!--header-->
+    <div id="header">
+        <div id="title"><span>Sumicenter</span></div>
+        <div id="menu-btn">
+            <div class="btn-sumicenter"></div>
+            <div class="btn-sumicenter"></div>
+            <div class="btn-sumicenter"></div>
+        </div>
+    </div>
+
+    <!--profile-->
+
+    <div id="profile">
+        <div id="photo"><img src="../static/img/perfil.png" alt=""></div>
+        {% if user.is_authenticated %}
+        <div id="name"><span>{{user.first_name}}</span></div>
+        
+        
+    </div>
+
+    <!--items-->
+
+    <div id="menu-items">
+        <div class="item">
+            <a href="{% url 'inicio'%}">
+                <div class="icon"> <i class="fas fa-home"></i></div>
+                <div class="title"><span>Inicio</span></div>
+            </a>
+        </div>
+
+        <div class="item">
+            <a href="{% url 'truper'%}">
+                <div class="icon"> <i class="fas fa-cog"></i>
+                </div>
+                <div class="title"><span>Truper</span></div>
+            </a>
+        </div>
+
+
+        
+        <div class="item separator">
+        
+        </div>
+        {% endif %}
+        <!--CERRAR SESION-->
+        <div class="item">
+            <a href="{%url 'logout'%}">
+                <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
+                <div class="title"><span>Cerrar Sesion</span></div>
+            </a>
+        </div>
+
+        <div class="item separator">
+        
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const btn = document.querySelector('#menu-btn');
+    const menu = document.querySelector('#sidemenu');
+
+    btn.addEventListener('click', e => {
+        menu.classList.toggle("menu-expanded");
+        menu.classList.toggle("menu-colapsed");
+
+        document.querySelector('body').classList.toggle('body-expanded');
+    });
+</script>

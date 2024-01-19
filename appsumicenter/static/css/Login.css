@@ -1,0 +1,30 @@
+.orange{
+    background-color: #e67946 !important; 
+    border: none !important;
+    color: #fff !important;
+}
+
+
+
+.grey{
+    background-color: rgb(69, 68, 68);
+}
+
+.grey h2{
+    text-align: center;
+    color: #fff;
+    padding: 20px 20px;
+}
+
+.formulario{
+    display: grid;
+    justify-content: center;
+    background-color: rgb(69, 68, 68);
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 5rem;
+}
+
+.formulario{
+    padding: 20px ;
+}

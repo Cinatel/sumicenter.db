@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-search{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.input-search input{
+    width: 500px;
+}
+
+.modal-container{
+    display:flex;
+    background-color: rgb(69, 68, 68);
+    align-items: center;
+    justify-content: center;
+    position: static;
+    pointer-events: none;
+    opacity: 0;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+    height: 582px;
+}
+
+.modal{
+   width: 400px;
+   max-width: 100%;
+   padding: 30px 50px;
+   box-shadow:  0 2px 4px rgba( 0, 0, 0, 0.2);
+}
+
+.modal h2{
+    color: #fff;
+}
+
+.modal button{
+    margin-top: 20px;
+}
+
+.barra_busqueda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 80px;
+    margin: 10px 25%;
+    padding: 10px;
+    z-index: 1000; 
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 8rem;
+    margin-bottom: -8rem;
+}
+
+button{
+    text-align: center;
+    background-color: #e67946;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 20px 25px;
+}
+
+.item{
+    padding-top: 10px;
+}
+
+.item input{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.main-container{
+    margin-left: 200px;
+}
+
+#main-container{
+    margin: 50px 8% ;
+    width: 900px;
+}
+
+
+
+table{
+    background-color: rgb(69, 68, 68);
+    width: 100% !important;
+    max-width: 800px;
+    border-collapse: collapse ;
+    text-align: center;
+    overflow-x: auto;
+}
+
+td{
+    font-size: 15px;
+    
+}
+
+th, td{
+    padding: 8px;
+    width: 33.33%; /* Divide el ancho en partes iguales para 3 columnas */
+    max-width: 200px;
+}
+
+thead{
+    background-color:#e67946;
+    color: white;
+    border-bottom: solid 5px rgb(41, 40, 40);
+}
+
+tr:hover td{
+    background-color: #ed8757;
+}
+
+.btn-pencil{
+    background-color: rgb(23, 165, 236);
+    color: #fff;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+
+.btn-trash{
+    background-color: rgb(236, 23, 23);
+    color: #fff;
+    border-radius: 20%;
+    padding: 10px; 
+}
