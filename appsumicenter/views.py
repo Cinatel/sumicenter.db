@@ -56,7 +56,7 @@ def registrar(request):
         return render(request, 'error/registrationError.html')
 
 def condiciones(email):
-    if email == "laineza420@gmail.com":
+    if email == "ventas@sumicenter.com":
         return True
     else:
         return False
